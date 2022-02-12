@@ -1,25 +1,26 @@
 #include "sort.h"
 
 /**
- * swap_nodes - swaps two nodes on a singly linked list
- * @first_node: First node to swap
- * @second_node: Second node to swap
+ * swap_nodes - Swaps two nodes on a singly linked list
+ * @first: First node to swap
+ * @second: Second node to swap
+ * @head: Head of the dbl lnkd list
  */
 
-void swap_nodes(listint_t **head, listint_t *first_node, listint_t *second_node)
+void swap_nodes(listint_t **head, listint_t *first, listint_t *second)
 {
-	if (!first_node || !second_node)
+	if (!first || !second)
 		return;
-	if (*head == first_node)
-		*head = second_node;
-	if (first_node->prev)
-		(first_node->prev)->next = first_node->next;
-	if (second_node->next)
-		(second_node->next)->prev = second_node->prev;
-	first_node->next = second_node->next;
-	second_node->next = first_node;
-	second_node->prev = first_node->prev;
-	first_node->prev = second_node;
+	if (*head == first)
+		*head = second;
+	if (first->prev)
+		(first->prev)->next = first->next;
+	if (second->next)
+		(second->next)->prev = second->prev;
+	first->next = second->next;
+	second->next = first;
+	second->prev = first->prev;
+	first->prev = second;
 }
 
 /**
