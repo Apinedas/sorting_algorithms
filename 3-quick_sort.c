@@ -1,4 +1,5 @@
 #include "sort.h"
+
 /**
  * swap - swaps two positions in Array
  *
@@ -7,6 +8,7 @@
  * @size: size of array
  * @array: input array
  */
+
 void swap(int *first, int *second, size_t size, int *array)
 {
 	int temp = *first;
@@ -14,6 +16,7 @@ void swap(int *first, int *second, size_t size, int *array)
 	*second = temp;
 	print_array(array, size);
 }
+
 /**
  * partition - partition array while sorts it
  * @array: Input array
@@ -22,6 +25,7 @@ void swap(int *first, int *second, size_t size, int *array)
  * @size: size of array
  * Return: int
  */
+
 int partition(int *array, int low, int high, size_t size)
 {
 	int j;
@@ -42,6 +46,7 @@ int partition(int *array, int low, int high, size_t size)
 
 	return (i + 1);
 }
+
 /**
  * sorting - sorts an array
  *
@@ -50,6 +55,7 @@ int partition(int *array, int low, int high, size_t size)
  * @high: high position posible in array
  * @size: size of array
  */
+
 void sorting(int *array, int low, int high, size_t size)
 {
 	int partition_index;
@@ -72,8 +78,11 @@ void sorting(int *array, int low, int high, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
-	int low = 0, high = size - 1;
+	int low = 0, high;
 
 	if (array && size >= 2)
+	{
+		high = size - 1;
 		sorting(array, low, high, size);
+	}
 }
